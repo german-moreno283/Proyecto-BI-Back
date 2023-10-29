@@ -1,6 +1,6 @@
 import requests
 from fastapi import FastAPI
-from uploader import file_reader
+from uploader import file_uploader
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
@@ -24,6 +24,9 @@ class File(BaseModel):
 
 @app.get("/test")
 async def test():
+    
+    notebook_path = './notebooks/Analisis-textos.ipynb'
+    test_run(notebook_path)
 
 
 @app.post("/files/")
