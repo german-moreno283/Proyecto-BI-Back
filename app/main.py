@@ -25,7 +25,7 @@ class File(BaseModel):
 @app.get("/test")
 async def test():
     
-    notebook_path = './notebooks/Analisis-textos.ipynb'
+    notebook_path = './notebooks/Analisis-textos-test.ipynb'
     test_run(notebook_path)
 
 
