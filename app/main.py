@@ -32,9 +32,9 @@ async def test():
 @app.post("/files/")
 async def process_file(url:File):
 
-    r = requests.get(url, allow_redirects=True)
+    r = requests.get(url.url, allow_redirects=True)
     open('../data/SinEtiquetatest_cat_6716.csv', 'wb').write(r.content)
-    notebook_path = './notebooks/Analisis-textos.ipynb'
+    notebook_path = './notebooks/Analisis-textos-test.ipynb'
     #Esto corre el notebook
     test_run(notebook_path)
     #Sube el resultado del notebook a un archivo
