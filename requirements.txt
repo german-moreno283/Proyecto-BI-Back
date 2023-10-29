@@ -54,7 +54,6 @@ numba==0.58.1
 numpy==1.25.2
 packaging==23.2
 pandas==2.0.3
-pandas-profiling==3.2.0
 pandocfilters==1.5.0
 parso==0.8.3
 patsy==0.5.3
@@ -67,7 +66,7 @@ prompt-toolkit==3.0.39
 psutil==5.9.6
 ptyprocess==0.7.0
 pure-eval==0.2.2
-pydantic==2.4.2
+pydantic==1.*
 pydantic_core==2.10.1
 Pygments==2.16.1
 pyparsing==3.1.1
