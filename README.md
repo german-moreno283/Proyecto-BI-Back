@@ -6,5 +6,7 @@ La ejecución se hace con uvicorn dentro de la carpeta app
 
 `cd app`
 
+`python -m ipykernel install --user --name=myenv-kernel`
+
 `uvicorn main:app --reload`
 
