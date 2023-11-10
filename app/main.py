@@ -5,6 +5,8 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from test_run import test_run
+from prueba import predict_data
+
 app = FastAPI()
 
 app.add_middleware(
@@ -22,11 +24,14 @@ def index():
 class File(BaseModel):
     url:str
 
+import os
+
 @app.get("/test")
 async def test():
     
-    notebook_path = './notebooks/Analisis-textos-test.ipynb'
+    notebook_path = './notebooks/pruebas.ipynb'
     test_run(notebook_path)
+    return {"message": "Success"}
 
 
 @app.post("/files/")
@@ -34,9 +39,7 @@ async def process_file(url:File):
 
     r = requests.get(url.url, allow_redirects=True)
     open('../data/SinEtiquetatest_cat_6716.csv', 'wb').write(r.content)
-    notebook_path = './notebooks/Analisis-textos-test.ipynb'
-    #Esto corre el notebook
-    test_run(notebook_path)
+    
     #Sube el resultado del notebook a un archivo
     link = file_uploader()
 

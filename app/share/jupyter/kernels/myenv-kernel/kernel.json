@@ -1,0 +1,14 @@
+{
+ "argv": [
+  "/home/leo/miniforge3/bin/python",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "myenv-kernel",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}
